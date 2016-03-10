@@ -14,8 +14,6 @@ void adjust_weights_winner_neighbours(const int &, const float &, const int &, c
 
 void train_one_iteration(const float &, const int &);
 
-void init_ksom();
-
 void init_ksom_to_zero();
 
 int find_winner(const float []);
