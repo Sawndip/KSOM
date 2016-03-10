@@ -4,20 +4,7 @@
  *
  */
 
-#include <cmath>
-#include <vector>
-#include <cstring>
-#include <fstream>
-
 #include "ksom.hpp"
-
-/* -- REDUNDANT : MOVED TO HEADER FILE ksom.hpp
-
-const int NUMBER_OF_OUTPUT_NODES = 150;
-const int NUMBER_OF_TRAINING_VECTORS = 75;
-const int INPUT_VECTOR_DIMENSION = 21;
-
-const float minimum_learning_rate = 0.015625;
 
 //--the weight matrix, assumed to be randomly initialised
 float weight_matrix[NUMBER_OF_OUTPUT_NODES][INPUT_VECTOR_DIMENSION];
@@ -27,10 +14,6 @@ int repeated_usage_threshold[NUMBER_OF_OUTPUT_NODES] = {0};
 float training_vectors[NUMBER_OF_TRAINING_VECTORS][INPUT_VECTOR_DIMENSION];
 
 float matching[NUMBER_OF_OUTPUT_NODES];
-
-void adjust_weights_winner_neighbours(const int &, const float &, const int &, const int &);
-
-*/
 
 void train_one_iteration(const float &learning_rate, const int &neighbourhood_radius){
 
@@ -106,33 +89,6 @@ void init_ksom_to_zero(){
         for(int j=0;j<INPUT_VECTOR_DIMENSION; ++j)
             weight_matrix[i][j] = 0.0f;
 }
-
-void init_ksom(){
-    for(int i=0;i<NUMBER_OF_OUTPUT_NODES;++i){
-	weight_matrix[i][0] = 45.2829;
-	weight_matrix[i][1] = 44.6861;
-	weight_matrix[i][2] = 43.1915;
-	weight_matrix[i][3] = 40.7171;
-	weight_matrix[i][4] = 36.2886;
-	weight_matrix[i][5] = 29.4421;
-	weight_matrix[i][6] = 20.5276;
-	weight_matrix[i][7] = 10.4354;
-	weight_matrix[i][8] = 13.7102;
-	weight_matrix[i][9] = 7.70246;
-	weight_matrix[i][10] = 14.6136;
-	weight_matrix[i][11] = 8.00668;
-	weight_matrix[i][12] = 17.4742;
-	weight_matrix[i][13] = 18.3405;
-	weight_matrix[i][14] = 25.9287;
-	weight_matrix[i][15] = 25.7686;
-	weight_matrix[i][16] = 27.3856;
-	weight_matrix[i][17] = 22.7806;
-	weight_matrix[i][18] = 30.3099;
-	weight_matrix[i][19] = 25.2091;
-	weight_matrix[i][20] = 13.7027;
-    }
-}
-
 
 int find_winner(const float ip_vector[]){
 	memset(matching, 0, sizeof(float)*NUMBER_OF_OUTPUT_NODES);
