@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+## Kohonen Self-Organising Map C++ Module
 
-You can use the [editor on GitHub](https://github.com/sandeepsukumaran/KSOM/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This [repository](https://github.com/sandeepsukumaran/KSOM) contains the C++ code for a [Kohonen Self-Organising map](https://en.wikipedia.org/wiki/Self-organizing_map), developed for use with a face recognition project done during my final year of bachelor's at College of Engineering Trivandrum.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Files
+There are two files in this repository: the cpp code file and the header file used for declarations.
 
-### Markdown
+### Using the module
+To train the KSOM, the parameters of the network can be set in the _.hpp_ file. Initialisation of the KSOM weight matrix to non-zero values can be achieved by using the _load_weight_matrix_ function. Training iterations are run one at a time by specifying the learning rate and neighbourhood radius for the iteration. Additional functions have to be written for the same.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sandeepsukumaran/KSOM/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Some details of the implementation used
+The simple training algorithm used can be found on [Wikipedia](https://en.wikipedia.org/wiki/Self-organizing_map#Algorithm). Distance of neighbours from BMU is taken to be 1.
